@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: construction-rag-backend
+    runtime: docker
+    repo: https://github.com/YOUR_USERNAME/construction-rag-chatbot
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: DOCLING_URL
+        sync: false
+      - key: CORS_ORIGINS
+        value: "https://your-frontend.vercel.app"
